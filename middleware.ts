@@ -69,8 +69,27 @@ async function handlePortalAndLogin(request: NextRequest): Promise<NextResponse>
   return NextResponse.next()
 }
 
+function stagingGate(request: NextRequest): NextResponse | null {
+  const password = process.env.STAGING_PASSWORD
+  if (!password) return null
+
+  const header = request.headers.get("authorization")
+  if (header?.startsWith("Basic ")) {
+    const [, pass] = atob(header.slice(6)).split(":")
+    if (pass === password) return null
+  }
+
+  return new NextResponse("Staging site. Authentication required.", {
+    status: 401,
+    headers: { "WWW-Authenticate": 'Basic realm="Komma staging"' },
+  })
+}
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+
+  const gate = stagingGate(request)
+  if (gate) return gate
 
   if (
     pathname.startsWith("/api") ||

@@ -7,5 +7,17 @@
   "assets": {
     "binding": "ASSETS",
     "directory": ".open-next/assets"
+  },
+  "env": {
+    "staging": {
+      "name": "komma-systems-staging",
+      "assets": {
+        "binding": "ASSETS",
+        "directory": ".open-next/assets"
+      },
+      "vars": {
+        "STAGING_PASSWORD": "komma-staging"
+      }
+    }
   }
 }

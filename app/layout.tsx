@@ -49,7 +49,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteBaseUrl()),
   title: "KOMMA",
-  description: "KOMMA is a cooperative that designs and builds the tools to hold land and housing in common. A research and relational technology studio using real-world demonstration to shift how we value, own, govern and care for what we hold in common.",
+  description: "KOMMA is a research and relational-technology studio building the finance, legal-form and technology mechanisms to hold what we have in common, beginning with land and housing. It uses real-world demonstration to shift how we value, own, govern and care for what we hold in common.",
   icons: {
     icon: [
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "KOMMA",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "KOMMA" }],
-    description: "KOMMA is a cooperative that designs and builds the tools to hold land and housing in common. A research and relational technology studio using real-world demonstration to shift how we value, own, govern and care for what we hold in common.",
+    description: "KOMMA is a research and relational-technology studio building the finance, legal-form and technology mechanisms to hold what we have in common, beginning with land and housing. It uses real-world demonstration to shift how we value, own, govern and care for what we hold in common.",
     type: "website",
   },
 }
@@ -84,26 +84,31 @@ export default async function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "KOMMA",
-              legalName: "Komma Genossenschaft",
               url: "https://komma.systems",
               logo: "https://komma.systems/favicon.svg",
+              foundingDate: "2026",
               description:
-                "KOMMA is a cooperative that designs and builds the tools to hold land and housing in common.",
-              founder: [
-                { "@type": "Person", name: "Charles Fisher" },
-                { "@type": "Person", name: "Clara Gromaches" },
-              ],
+                "KOMMA is a research and relational-technology studio building the finance, legal-form and technology mechanisms to hold what we have in common, beginning with land and housing.",
               subOrganization: {
                 "@type": "Organization",
                 name: "Komma Systems UG (haftungsbeschränkt)",
               },
-              sameAs: ["https://github.com/komma-systems"],
+              sameAs: [
+                "https://www.linkedin.com/company/komma-systems",
+                "https://x.com/komma_systems",
+                "https://github.com/komma-systems",
+              ],
               knowsAbout: [
                 "community land trusts",
                 "cooperative housing",
                 "land registries",
                 "civic deliberation",
                 "commons governance",
+                "Overflow",
+                "Weave",
+                "Meld",
+                "BRAID",
+                "KairOS",
               ],
             }),
           }}
